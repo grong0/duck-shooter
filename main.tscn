@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://scripts/duckSpawner.gd" id="2_1ehqp"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cmltd"]
+[ext_resource type="Texture2D" uid="uid://d2gmkm0057w5s" path="res://assets/crosshair.png" id="3_rstsx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_df7ny"]
 
@@ -15,13 +16,12 @@ script = ExtResource("1_i3mlt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("2_8mnb8")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-texture_filter = 2
-material = SubResource("CanvasItemMaterial_cmltd")
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("3_rstsx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_df7ny")
