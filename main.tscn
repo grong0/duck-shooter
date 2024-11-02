@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://xvebs21hcrll"]
+[gd_scene load_steps=5 format=3 uid="uid://xvebs21hcrll"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_i3mlt"]
+[ext_resource type="Script" path="res://scripts/crosshair.gd" id="2_8mnb8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cmltd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_df7ny"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_i3mlt")
@@ -8,3 +13,14 @@ script = ExtResource("1_i3mlt")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("2_8mnb8")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 2
+material = SubResource("CanvasItemMaterial_cmltd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_df7ny")
