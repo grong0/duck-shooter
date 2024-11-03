@@ -34,24 +34,24 @@ script = ExtResource("5_4qrjp")
 [node name="DuckSpawner" type="Node2D" parent="DuckPool"]
 position = Vector2(-960, 360)
 script = ExtResource("3_nk6ml")
-z = 7.0
+z = 7
 
 [node name="DuckSpawner2" type="Node2D" parent="DuckPool"]
 position = Vector2(960, 290)
 script = ExtResource("3_nk6ml")
 direction = -1
-z = 5.0
+z = 5
 
 [node name="DuckSpawner3" type="Node2D" parent="DuckPool"]
 position = Vector2(-380, -109)
 script = ExtResource("3_nk6ml")
-z = 3.0
+z = 3
 
 [node name="DuckSpawner4" type="Node2D" parent="DuckPool"]
 position = Vector2(339, -202)
 script = ExtResource("3_nk6ml")
 direction = -1
-z = 1.0
+z = 1
 
 [node name="Wave2" type="TextureRect" parent="."]
 visible = false

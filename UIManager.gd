@@ -38,9 +38,10 @@ func start_next(round: int):
 
 func _process(delta):
 	infiniTimer += delta
-	(get_node("Wave") as Sprite2D).position = Vector2(960 - sin(infiniTimer) * 30, 983 + cos(infiniTimer) * 10)
-	(get_node("Wave2") as Sprite2D).position = Vector2(960 - cos(infiniTimer) * 30, 883 - sin(infiniTimer) * 10)
-	
+	#$"../../Wave".position = Vector2(960 - sin(infiniTimer) * 30, 983 + cos(infiniTimer) * 10)
+	($"../../Wave" as Sprite2D).offset = Vector2(- sin(infiniTimer) * 30, cos(infiniTimer) * 10)
+	#$"../../Wave2".position = Vector2(960 - cos(infiniTimer) * 30, 883 - sin(infiniTimer) * 10)
+	print(($"../../Wave" as Sprite2D).offset)
 	
 	
 	

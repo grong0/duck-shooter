@@ -21,6 +21,16 @@ script = ExtResource("1_i3mlt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="Wave2" type="Sprite2D" parent="."]
+z_index = 6
+position = Vector2(0, 343)
+texture = ExtResource("13_26ynu")
+
+[node name="Wave" type="Sprite2D" parent="."]
+z_index = 8
+position = Vector2(0, 443)
+texture = ExtResource("13_26ynu")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Container" type="Control" parent="CanvasLayer"]
@@ -36,16 +46,6 @@ script = ExtResource("2_0b5g6")
 roundSignSprites = [ExtResource("4_04ujo"), ExtResource("4_e08hs"), ExtResource("5_g3e6g"), ExtResource("6_itw0h"), ExtResource("7_k6p8d")]
 roundSignAltSprites = [ExtResource("8_crbms"), ExtResource("9_n4upi"), ExtResource("10_jf1rf"), ExtResource("11_npsrk"), ExtResource("12_w2qrv")]
 metadata/_edit_use_anchors_ = true
-
-[node name="Wave2" type="Sprite2D" parent="CanvasLayer/Container"]
-z_index = 6
-position = Vector2(-633, 786)
-texture = ExtResource("13_26ynu")
-
-[node name="Wave" type="Sprite2D" parent="CanvasLayer/Container"]
-z_index = 8
-position = Vector2(-633, 886)
-texture = ExtResource("13_26ynu")
 
 [node name="RoundSign" type="TextureRect" parent="CanvasLayer/Container"]
 z_index = 11
