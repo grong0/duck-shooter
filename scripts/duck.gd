@@ -18,6 +18,7 @@ static var duckDictionary: Dictionary = {
 static var my_scene: PackedScene
 const SPEED = 100.0
 
+static var globalSpeedMult: float = 1;
 var speed_mult: float
 var direction: int
 var points: int
@@ -36,4 +37,4 @@ static func Duck(duckType: DuckType, duck_direction := 1) -> Duck:
 	return new_duck
 
 func _process(delta):
-	position.x += delta * SPEED * direction * speed_mult
+	position.x += delta * SPEED * direction * speed_mult * globalSpeedMult

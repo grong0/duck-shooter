@@ -23,8 +23,26 @@ texture = ExtResource("2_eq6ua")
 scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_0s1np")
 
-[node name="DuckSpawner" type="Node2D" parent="."]
-script = ExtResource("3_nk6ml")
+[node name="DuckPool" type="Node2D" parent="."]
+script = ExtResource("4_etmwp")
+
+[node name="DuckSpawner" type="Node2D" parent="DuckPool"]
+position = Vector2(-586, 2)
+script = ExtResource("2_1ehqp")
+
+[node name="DuckSpawner2" type="Node2D" parent="DuckPool"]
+position = Vector2(-586, 209)
+script = ExtResource("2_1ehqp")
+
+[node name="DuckSpawner3" type="Node2D" parent="DuckPool"]
+position = Vector2(598, 95)
+script = ExtResource("2_1ehqp")
+direction = -1
+
+[node name="DuckSpawner4" type="Node2D" parent="DuckPool"]
+position = Vector2(593, 307)
+script = ExtResource("2_1ehqp")
+direction = -1
 
 [node name="Frenzy" type="Node2D" parent="."]
 script = ExtResource("4_hheni")
