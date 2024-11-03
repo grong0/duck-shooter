@@ -8,7 +8,7 @@ var spawnTimer := 0.0
 func _process(delta):
 	spawnTimer += delta
 	if(spawnTimer > spawnInterval):
-		spawn_duck(Duck.DuckType.Yellow);
+		spawn_duck(Duck.DuckType.YELLOW);
 		spawnTimer -= spawnInterval;
 
 func spawn_duck(duckType: Duck.DuckType):
