@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ehttj5jwqhhy"]
+[gd_scene load_steps=6 format=3 uid="uid://ehttj5jwqhhy"]
 
 [ext_resource type="Script" path="res://scripts/duck.gd" id="1_6u3vt"]
 [ext_resource type="Texture2D" uid="uid://dbx8e6ebak15t" path="res://sprites/YellowDuck.png" id="2_av7kl"]

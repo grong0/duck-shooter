@@ -44,4 +44,4 @@ func _process(delta):
 		duckSpawnerIndex += 1
 		duckSpawnerIndex %= 4
 		(get_child(duckSpawnerIndex) as DuckSpawner).spawn_duck(getDuck())
-		roundTimer -= spawnDelay / 4
+		roundTimer -= spawnDelay / 4 + randf_range(-0.2, .2)
