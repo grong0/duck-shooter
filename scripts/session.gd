@@ -30,7 +30,7 @@ func _on_duck_destroyed(duck: Duck):
 
 func _ready():
 	total_time = ROUND_TIME + 1;
-	round_num = 3
+	round_num = -1
 	frenzy_count = 1
 	points = 0
 	frenzy_node = get_node("Frenzy")
