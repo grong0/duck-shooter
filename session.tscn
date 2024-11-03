@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvvrkg853h1v2"]
+[gd_scene load_steps=20 format=3 uid="uid://dvvrkg853h1v2"]
 
 [ext_resource type="Script" path="res://scripts/crosshair.gd" id="1_jhqg5"]
 [ext_resource type="Script" path="res://scripts/session.gd" id="1_smjrf"]
@@ -6,8 +6,18 @@
 [ext_resource type="Script" path="res://scripts/duckSpawner.gd" id="3_nk6ml"]
 [ext_resource type="Script" path="res://scripts/frenzy.gd" id="4_hheni"]
 [ext_resource type="Script" path="res://scripts/duckPool.gd" id="5_4qrjp"]
-[ext_resource type="Texture2D" uid="uid://betm6ar7qpuqy" path="res://sprites/stuff/wave.png" id="7_2j82v"]
-[ext_resource type="Texture2D" uid="uid://d2i6l5ru47pea" path="res://sprites/stuff/hills.png" id="7_p5lyb"]
+[ext_resource type="Texture2D" uid="uid://dq2oc1ovsk6es" path="res://sprites/frenzy_bolt.png" id="5_5o2rq"]
+[ext_resource type="Script" path="res://scripts/come_x.gd" id="6_pdmbi"]
+[ext_resource type="Texture2D" uid="uid://dfu7ajwvkxf" path="res://sprites/stuff/wave.png" id="7_2j82v"]
+[ext_resource type="Texture2D" uid="uid://ciq6qk52xn3py" path="res://sprites/stuff/hills.png" id="7_p5lyb"]
+[ext_resource type="Script" path="res://scripts/nixie_tubes.gd" id="9_yxdfe"]
+[ext_resource type="Texture2D" uid="uid://dvibwx23sd8iv" path="res://sprites/nixie_tubes/nixie_off.png" id="10_p68j7"]
+[ext_resource type="Script" path="res://scripts/come_up.gd" id="11_jqmku"]
+[ext_resource type="Texture2D" uid="uid://ilv526l6vgdx" path="res://sprites/score_indicator.png" id="12_ipr7s"]
+[ext_resource type="Texture2D" uid="uid://cwk4hfklvet2s" path="res://sprites/stick.png" id="13_sbyu8"]
+[ext_resource type="Script" path="res://scripts/frenzy_tubes.gd" id="14_g3l4k"]
+[ext_resource type="Texture2D" uid="uid://db7nmw3bchreg" path="res://sprites/nixie_tubes/nixie_frenzy_off.png" id="14_vojj5"]
+[ext_resource type="Texture2D" uid="uid://bej8fio0y58oq" path="res://sprites/frenzy_indicator.png" id="15_omm14"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0s1np"]
 
@@ -30,6 +40,28 @@ shape = SubResource("CircleShape2D_0s1np")
 
 [node name="Frenzy" type="Node2D" parent="."]
 script = ExtResource("4_hheni")
+
+[node name="Sprite2D" type="Sprite2D" parent="Frenzy"]
+z_index = 8
+position = Vector2(-868, -44)
+scale = Vector2(-1, 1)
+texture = ExtResource("5_5o2rq")
+
+[node name="ComeX" type="Node2D" parent="Frenzy/Sprite2D"]
+script = ExtResource("6_pdmbi")
+start_x = -868.0
+end_x = -610.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="Frenzy"]
+z_index = 8
+position = Vector2(938, -58)
+texture = ExtResource("5_5o2rq")
+
+[node name="ComeX" type="Node2D" parent="Frenzy/Sprite2D2"]
+script = ExtResource("6_pdmbi")
+duration = 1.0
+start_x = 938.0
+end_x = 718.0
 
 [node name="DuckPool" type="Node2D" parent="."]
 script = ExtResource("5_4qrjp")
@@ -77,3 +109,155 @@ visible = false
 z_index = 10
 position = Vector2(0, 610)
 texture = ExtResource("7_2j82v")
+
+[node name="Score" type="Node2D" parent="."]
+
+[node name="Nixie Tubes Score" type="Node2D" parent="Score"]
+script = ExtResource("9_yxdfe")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Score/Nixie Tubes Score"]
+z_index = 20
+position = Vector2(-61, 478.7)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("10_p68j7")
+
+[node name="ComeUp" type="Node2D" parent="Score/Nixie Tubes Score/Sprite2D5"]
+position = Vector2(1108.59, -1450.61)
+scale = Vector2(3.0303, 3.0303)
+script = ExtResource("11_jqmku")
+duration = 1.0
+start_y = 626.0
+end_y = 478.7
+
+[node name="Sprite2D4" type="Sprite2D" parent="Score/Nixie Tubes Score"]
+z_index = 20
+position = Vector2(-137, 478.7)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("10_p68j7")
+
+[node name="ComeUp" type="Node2D" parent="Score/Nixie Tubes Score/Sprite2D4"]
+position = Vector2(1108.59, -1450.61)
+scale = Vector2(3.0303, 3.0303)
+script = ExtResource("11_jqmku")
+duration = 1.0
+start_y = 626.0
+end_y = 478.7
+
+[node name="Sprite2D3" type="Sprite2D" parent="Score/Nixie Tubes Score"]
+z_index = 20
+position = Vector2(-213, 478.7)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("10_p68j7")
+
+[node name="ComeUp" type="Node2D" parent="Score/Nixie Tubes Score/Sprite2D3"]
+position = Vector2(1108.59, -1450.61)
+scale = Vector2(3.0303, 3.0303)
+script = ExtResource("11_jqmku")
+duration = 1.0
+start_y = 626.0
+end_y = 478.7
+
+[node name="Sprite2D2" type="Sprite2D" parent="Score/Nixie Tubes Score"]
+z_index = 20
+position = Vector2(-289.835, 478.7)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("10_p68j7")
+
+[node name="ComeUp" type="Node2D" parent="Score/Nixie Tubes Score/Sprite2D2"]
+position = Vector2(1108.59, -1450.61)
+scale = Vector2(3.0303, 3.0303)
+script = ExtResource("11_jqmku")
+duration = 1.0
+start_y = 626.0
+end_y = 478.7
+
+[node name="Sprite2D1" type="Sprite2D" parent="Score/Nixie Tubes Score"]
+z_index = 20
+position = Vector2(-365.835, 478.7)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("10_p68j7")
+
+[node name="ComeUp" type="Node2D" parent="Score/Nixie Tubes Score/Sprite2D1"]
+position = Vector2(1108.59, -1450.61)
+scale = Vector2(3.0303, 3.0303)
+script = ExtResource("11_jqmku")
+duration = 1.0
+start_y = 626.0
+end_y = 478.7
+
+[node name="Sprite2D" type="Sprite2D" parent="Score"]
+z_index = 1905
+position = Vector2(-556, 477)
+texture = ExtResource("12_ipr7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Score/Sprite2D"]
+z_index = -175
+position = Vector2(-74, 136)
+scale = Vector2(0.369565, 0.335848)
+texture = ExtResource("13_sbyu8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Score/Sprite2D"]
+z_index = -175
+position = Vector2(78, 140)
+scale = Vector2(0.369565, 0.335848)
+texture = ExtResource("13_sbyu8")
+
+[node name="ComeUp" type="Node2D" parent="Score/Sprite2D"]
+script = ExtResource("11_jqmku")
+duration = 1.0
+start_y = 626.0
+end_y = 477.0
+
+[node name="Nixitubes Frenzy" type="Node2D" parent="."]
+script = ExtResource("14_g3l4k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Nixitubes Frenzy"]
+z_index = 525
+position = Vector2(560.665, 478.7)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("14_vojj5")
+
+[node name="ComeUp" type="Node2D" parent="Nixitubes Frenzy/Sprite2D"]
+position = Vector2(1108.59, -1450.61)
+scale = Vector2(3.0303, 3.0303)
+script = ExtResource("11_jqmku")
+duration = 1.0
+start_y = 626.0
+end_y = 478.7
+
+[node name="Sprite2D2" type="Sprite2D" parent="Nixitubes Frenzy"]
+z_index = 525
+position = Vector2(636.665, 478.7)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("14_vojj5")
+
+[node name="ComeUp" type="Node2D" parent="Nixitubes Frenzy/Sprite2D2"]
+position = Vector2(1108.59, -1450.61)
+scale = Vector2(3.0303, 3.0303)
+script = ExtResource("11_jqmku")
+duration = 1.0
+start_y = 626.0
+end_y = 478.7
+
+[node name="Frenzy Indicator" type="Sprite2D" parent="."]
+z_index = 1905
+position = Vector2(341.5, 477)
+texture = ExtResource("15_omm14")
+
+[node name="Sprite2D" type="Sprite2D" parent="Frenzy Indicator"]
+z_index = -175
+position = Vector2(-74, 136)
+scale = Vector2(0.369565, 0.335848)
+texture = ExtResource("13_sbyu8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Frenzy Indicator"]
+z_index = -175
+position = Vector2(78, 140)
+scale = Vector2(0.369565, 0.335848)
+texture = ExtResource("13_sbyu8")
+
+[node name="ComeUp" type="Node2D" parent="Frenzy Indicator"]
+script = ExtResource("11_jqmku")
+duration = 1.0
+start_y = 626.0
+end_y = 477.0

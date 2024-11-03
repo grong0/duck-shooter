@@ -1,6 +1,8 @@
 class_name Session
 extends Node2D
 
+signal updated_points(value: int)
+signal frenzy_updated(frenzy_count: int)
 signal session_completed
 signal start_round_transition
 
@@ -15,17 +17,20 @@ var duck_pool: DuckPool
 
 func add_points(value: int) -> void:
 	points += value * (2 if frenzy_node.enabled else 1)
+	print("emmited points")
+	updated_points.emit(points)
 
 func _on_duck_destroyed(duck: Duck):
 	add_points(duck.points)
 	if duck.duck_type == Duck.DuckType.GOLDEN:
 		frenzy_count += 1 if frenzy_count < 2 else 0
+		frenzy_updated.emit(frenzy_count)
 	print(points)
 	print(frenzy_count)
 
 func _ready():
 	total_time = ROUND_TIME + 1;
-	round_num = -1
+	round_num = 3
 	frenzy_count = 1
 	points = 0
 	frenzy_node = get_node("Frenzy")
@@ -34,7 +39,7 @@ func _ready():
 	var crosshair_node = get_node("Crosshair")
 	crosshair_node.connect("duck_destroyed", _on_duck_destroyed)
 
-	
+	frenzy_updated.emit(frenzy_count)
 
 func _process(delta):
 	if round_num >= 5:
@@ -55,4 +60,3 @@ func _process(delta):
 func next_round():
 	duck_pool.startRound(round_num)
 	print("rounded ended, now round " + str(round_num + 1))
-	

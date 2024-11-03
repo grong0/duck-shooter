@@ -12,6 +12,10 @@ func _on_frenzy_activated():
 	get_parent().frenzy_count -= 1
 	enabled = true
 	time_enabled = 0
+	get_parent().frenzy_updated.emit(get_parent().frenzy_count)
+
+	get_child(0).get_child(0).come()
+
 	print("frenzy started")
 
 func _ready():
@@ -26,6 +30,7 @@ func _process(delta):
 
 	if time_enabled > DURATION:
 		enabled = false
+		get_child(0).get_child(0).uncome()
 		print("frenzy over")
 	else:
 		time_enabled += delta

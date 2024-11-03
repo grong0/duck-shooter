@@ -4,7 +4,7 @@ extends Area2D
 signal duck_destroyed(duck: Duck)
 signal frenzy_activated()
 
-const SPEED = 300.0
+const SPEED = 900
 
 func _process(delta):
 	scale = Vector2(1, 1)
