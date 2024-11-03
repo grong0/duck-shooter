@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/duck.gd" id="1_6u3vt"]
 [ext_resource type="Texture2D" uid="uid://dbx8e6ebak15t" path="res://sprites/YellowDuck.png" id="2_av7kl"]
 [ext_resource type="Texture2D" uid="uid://d21xkncj157qg" path="res://sprites/stick.png" id="3_ydto4"]
+[ext_resource type="Script" path="res://scripts/motion.gd" id="3_yxfc0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwss2"]
 size = Vector2(32, 32)
@@ -23,3 +24,6 @@ texture = ExtResource("2_av7kl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(4.5, 4.5)
 shape = SubResource("RectangleShape2D_uwss2")
+
+[node name="Motion" type="Node2D" parent="."]
+script = ExtResource("3_yxfc0")
