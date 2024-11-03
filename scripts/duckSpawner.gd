@@ -1,17 +1,13 @@
+class_name DuckSpawner
 extends Node2D
 
-const spawnInterval = 2
+const spawnInterval = 2/6.0
 
-var direction = 1
+@export var direction = 1
 var spawnTimer := 0.0
-
-func _process(delta):
-	spawnTimer += delta
-	if(spawnTimer > spawnInterval):
-		spawn_duck(Duck.DuckType.Yellow);
-		spawnTimer -= spawnInterval;
 
 func spawn_duck(duckType: Duck.DuckType):
 	var duck = Duck.Duck(duckType, direction)
 	add_child.call_deferred(duck)
 	print("Spawning")
+
