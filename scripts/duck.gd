@@ -30,7 +30,7 @@ static func Duck(duckType: DuckType, direction := 1) -> Duck:
 	new_duck.speed_mult = duckDictionary[duckType]["speed"]
 	new_duck.points = duckDictionary[duckType]["points"]
 	var sprite: Sprite2D = new_duck.get_child(0)
-	sprite.texture = load("res://Sprites/" + duckDictionary[duckType]["sprite"] + ".png")
+	sprite.texture = load("res://sprites/" + duckDictionary[duckType]["sprite"] + ".png")
 	return new_duck
 
 func _process(delta):

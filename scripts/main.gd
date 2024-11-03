@@ -1,15 +1,13 @@
 class_name Main
 extends Node2D
 
-
 var total_time: int # seconds
 var session: Session
 
 func _on_duck_destroyed(duck: Duck):
 	if session != null:
-		session.points += 100
+		session.points += duck.points
 		print(session.points)
-		# session.points += duck.points
 
 func _on_session_complete():
 	print(session.round)
