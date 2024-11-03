@@ -4,7 +4,7 @@ extends Node2D
 signal session_completed
 signal start_round_transition
 
-@export var ROUND_TIME: int = 10 # seconds
+@export var ROUND_TIME: int = 30 # seconds
 var total_time: float
 
 var round_num: int
@@ -24,8 +24,8 @@ func _on_duck_destroyed(duck: Duck):
 	print(frenzy_count)
 
 func _ready():
-	total_time = 0
-	round_num = 0
+	total_time = ROUND_TIME + 1;
+	round_num = -1
 	frenzy_count = 1
 	points = 0
 	frenzy_node = get_node("Frenzy")
@@ -34,8 +34,7 @@ func _ready():
 	var crosshair_node = get_node("Crosshair")
 	crosshair_node.connect("duck_destroyed", _on_duck_destroyed)
 
-	duck_pool.startRound(round_num)
-	print("session started, round " + str(round_num + 1))
+	
 
 func _process(delta):
 	if round_num >= 5:
@@ -46,9 +45,9 @@ func _process(delta):
 		round_num += 1
 		total_time -= ROUND_TIME
 		if round_num < 5:
+			duck_pool.running = false
 			start_round_transition.emit(round_num)
 		else:
-			duck_pool.running = false
 			print("session_ending...")
 			session_completed.emit()
 
