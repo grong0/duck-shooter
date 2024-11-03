@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ehttj5jwqhhy"]
+[gd_scene load_steps=3 format=3 uid="uid://ehttj5jwqhhy"]
 
 [ext_resource type="Script" path="res://scripts/duck.gd" id="1_6u3vt"]
-[ext_resource type="Texture2D" uid="uid://j0d7uqij87yn" path="res://sprites/Duck.png" id="2_j6srb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwss2"]
 size = Vector2(32, 32)
@@ -12,7 +11,6 @@ script = ExtResource("1_6u3vt")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-texture = ExtResource("2_j6srb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uwss2")
