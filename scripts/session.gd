@@ -10,14 +10,15 @@ var round_num: int
 var frenzy_count: int
 var points: int
 var frenzy_node: Frenzy
+var duck_pool: DuckPool
 
 func add_points(value: int) -> void:
 	points += value * (2 if frenzy_node.enabled else 1)
 
 func _on_duck_destroyed(duck: Duck):
 	add_points(duck.points)
-	if is_instance_of(duck.DuckType, Duck.DuckType.GOLDEN):
-		frenzy_count += 1 if frenzy_count <= 2 else 0
+	if duck.duck_type == Duck.DuckType.GOLDEN:
+		frenzy_count += 1 if frenzy_count < 2 else 0
 	print(points)
 	print(frenzy_count)
 
@@ -27,10 +28,12 @@ func _ready():
 	frenzy_count = 1
 	points = 0
 	frenzy_node = get_node("Frenzy")
+	duck_pool = get_node("DuckPool")
 
 	var crosshair_node = get_node("Crosshair")
 	crosshair_node.connect("duck_destroyed", _on_duck_destroyed)
 
+	duck_pool.startRound(round_num)
 	print("session started, round " + str(round_num + 1))
 
 func _process(delta):
@@ -41,8 +44,11 @@ func _process(delta):
 	if total_time > ROUND_TIME:
 		round_num += 1
 		total_time -= ROUND_TIME
-		print("rounded ended, now round " + str(round_num + 1))
+		if round_num < 5:
+			duck_pool.startRound(round_num)
+			print("rounded ended, now round " + str(round_num + 1))
 
 	if round_num > 4:
+		duck_pool.running = false
 		print("session_ending...")
 		session_completed.emit()

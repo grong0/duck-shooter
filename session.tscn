@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0hdw222ikth3"]
+[gd_scene load_steps=8 format=3 uid="uid://d0hdw222ikth3"]
 
 [ext_resource type="Script" path="res://scripts/crosshair.gd" id="1_jhqg5"]
 [ext_resource type="Script" path="res://scripts/session.gd" id="1_smjrf"]
 [ext_resource type="Texture2D" uid="uid://d2gmkm0057w5s" path="res://sprites/crosshair.png" id="2_eq6ua"]
 [ext_resource type="Script" path="res://scripts/duckSpawner.gd" id="3_nk6ml"]
 [ext_resource type="Script" path="res://scripts/frenzy.gd" id="4_hheni"]
+[ext_resource type="Script" path="res://scripts/duckPool.gd" id="5_4qrjp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0s1np"]
 
@@ -23,26 +24,26 @@ texture = ExtResource("2_eq6ua")
 scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_0s1np")
 
-[node name="DuckPool" type="Node2D" parent="."]
-script = ExtResource("4_etmwp")
-
-[node name="DuckSpawner" type="Node2D" parent="DuckPool"]
-position = Vector2(-586, 2)
-script = ExtResource("2_1ehqp")
-
-[node name="DuckSpawner2" type="Node2D" parent="DuckPool"]
-position = Vector2(-586, 209)
-script = ExtResource("2_1ehqp")
-
-[node name="DuckSpawner3" type="Node2D" parent="DuckPool"]
-position = Vector2(598, 95)
-script = ExtResource("2_1ehqp")
-direction = -1
-
-[node name="DuckSpawner4" type="Node2D" parent="DuckPool"]
-position = Vector2(593, 307)
-script = ExtResource("2_1ehqp")
-direction = -1
-
 [node name="Frenzy" type="Node2D" parent="."]
 script = ExtResource("4_hheni")
+
+[node name="DuckPool" type="Node2D" parent="."]
+script = ExtResource("5_4qrjp")
+
+[node name="DuckSpawner" type="Node2D" parent="DuckPool"]
+position = Vector2(-375, 250)
+script = ExtResource("3_nk6ml")
+
+[node name="DuckSpawner2" type="Node2D" parent="DuckPool"]
+position = Vector2(330, 138)
+script = ExtResource("3_nk6ml")
+direction = -1
+
+[node name="DuckSpawner3" type="Node2D" parent="DuckPool"]
+position = Vector2(-380, -109)
+script = ExtResource("3_nk6ml")
+
+[node name="DuckSpawner4" type="Node2D" parent="DuckPool"]
+position = Vector2(339, -202)
+script = ExtResource("3_nk6ml")
+direction = -1
