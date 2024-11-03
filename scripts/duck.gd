@@ -35,6 +35,7 @@ static func Duck(duckType: DuckType, duck_direction := 1, z := 0) -> Duck:
 	var sprite: Sprite2D = new_duck.get_child(0)
 	sprite.texture = load("res://sprites/" + duckDictionary[duckType]["sprite"] + ".png")
 	(sprite as Node2D).z_index = z
+	(sprite as Node2D).scale *= Vector2(-duck_direction, 1)
 	print((sprite as Node2D).z_index)
 	return new_duck
 

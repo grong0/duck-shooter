@@ -40,10 +40,8 @@ func _process(delta):
 	infiniTimer += delta
 	#$"../../Wave".position = Vector2(960 - sin(infiniTimer) * 30, 983 + cos(infiniTimer) * 10)
 	($"../../Wave" as Sprite2D).offset = Vector2(- sin(infiniTimer) * 30, cos(infiniTimer) * 10)
+	($"../../Wave2" as Sprite2D).offset = Vector2(- cos(infiniTimer) * 30, - sin(infiniTimer) * 10)
 	#$"../../Wave2".position = Vector2(960 - cos(infiniTimer) * 30, 883 - sin(infiniTimer) * 10)
-	print(($"../../Wave" as Sprite2D).offset)
-	
-	
 	
 	
 	
@@ -63,20 +61,22 @@ func _process(delta):
 	match(state):
 		StateMachine.ROUNDFALL:
 			#move sign down
-			
+			(get_node("RoundSign") as TextureRect).position.y = -300 + 2 * (900 * stateTimer * stateTimer - 600 * stateTimer * stateTimer * stateTimer)
 			if(stateTimer > stateTimers[state]):
 				stateTimer -= stateTimers[state]
-				if(tutorials.size() < round):
+				if(tutorials.size() > round && tutorials[round].size() > 0):
 					state = StateMachine.TUTORIAL;
 				else:
 					state = StateMachine.ROUNDDELAY;
 		StateMachine.ROUNDDELAY:
+			(get_node("RoundSign") as TextureRect).position.y = 300
 			if(stateTimer > stateTimers[state]):
 				stateTimer -= stateTimers[state]
 				state = StateMachine.ROUNDUP;
 				next_round.emit()
 		StateMachine.ROUNDUP:
 			#move sign up
+			(get_node("RoundSign") as TextureRect).position.y = - 300 + 2 * ( 900 * (1-stateTimer) * (1-stateTimer) - 600 * (1-stateTimer) * (1-stateTimer) * (1-stateTimer))
 			if(stateTimer > stateTimers[state]):
 				stateTimer -= stateTimers[state]
 				state = StateMachine.OFF;
