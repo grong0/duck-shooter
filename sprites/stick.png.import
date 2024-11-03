@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://betm6ar7qpuqy"
-path="res://.godot/imported/wave.png-1aecd57fb127277c052df54620c24827.ctex"
+uid="uid://d21xkncj157qg"
+path="res://.godot/imported/stick.png-b18ecaf66f5960c72eab6d6dd414318f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/stuff/wave.png"
-dest_files=["res://.godot/imported/wave.png-1aecd57fb127277c052df54620c24827.ctex"]
+source_file="res://sprites/stick.png"
+dest_files=["res://.godot/imported/stick.png-b18ecaf66f5960c72eab6d6dd414318f.ctex"]
 
 [params]
 

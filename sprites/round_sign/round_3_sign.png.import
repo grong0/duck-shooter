@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://betm6ar7qpuqy"
-path="res://.godot/imported/wave.png-1aecd57fb127277c052df54620c24827.ctex"
+uid="uid://bfdsujv3etgj0"
+path="res://.godot/imported/round_3_sign.png-e3028bbd88ef0954116de9d61cf974f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/stuff/wave.png"
-dest_files=["res://.godot/imported/wave.png-1aecd57fb127277c052df54620c24827.ctex"]
+source_file="res://sprites/round_sign/round_3_sign.png"
+dest_files=["res://.godot/imported/round_3_sign.png-e3028bbd88ef0954116de9d61cf974f6.ctex"]
 
 [params]
 
