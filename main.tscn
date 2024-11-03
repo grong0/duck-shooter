@@ -14,13 +14,13 @@ script = ExtResource("1_i3mlt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Crosshair" type="Area2D" parent="."]
 script = ExtResource("2_8mnb8")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Crosshair"]
 texture = ExtResource("3_rstsx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crosshair"]
 scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_df7ny")
 
