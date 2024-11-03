@@ -41,4 +41,6 @@ static func Duck(duckType: DuckType, duck_direction := 1, z := 0) -> Duck:
 	return new_duck
 
 func _process(delta):
+	if(direction == 0):
+		position.y += delta * SPEED * speed_mult * globalSpeedMult * 2
 	position.x += delta * SPEED * direction * speed_mult * globalSpeedMult

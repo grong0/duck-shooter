@@ -44,8 +44,8 @@ func _process(delta):
 	if total_time > ROUND_TIME:
 		round_num += 1
 		total_time -= ROUND_TIME
+		duck_pool.running = false
 		if round_num < 5:
-			duck_pool.running = false
 			start_round_transition.emit(round_num)
 		else:
 			print("session_ending...")
