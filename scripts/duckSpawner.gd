@@ -14,4 +14,3 @@ func _process(delta):
 func spawn_duck(duckType: Duck.DuckType):
 	var duck = Duck.Duck(duckType, direction)
 	add_child.call_deferred(duck)
-	print("Spawning")
