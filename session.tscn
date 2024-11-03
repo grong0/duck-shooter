@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0hdw222ikth3"]
+[gd_scene load_steps=9 format=3 uid="uid://dvvrkg853h1v2"]
 
 [ext_resource type="Script" path="res://scripts/crosshair.gd" id="1_jhqg5"]
 [ext_resource type="Script" path="res://scripts/session.gd" id="1_smjrf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/duckSpawner.gd" id="3_nk6ml"]
 [ext_resource type="Script" path="res://scripts/frenzy.gd" id="4_hheni"]
 [ext_resource type="Script" path="res://scripts/duckPool.gd" id="5_4qrjp"]
+[ext_resource type="Texture2D" uid="uid://bv3b3rdi10rkc" path="res://sprites/stuff/wave.png" id="7_2j82v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0s1np"]
 
@@ -31,19 +32,55 @@ script = ExtResource("4_hheni")
 script = ExtResource("5_4qrjp")
 
 [node name="DuckSpawner" type="Node2D" parent="DuckPool"]
-position = Vector2(-375, 250)
+position = Vector2(-960, 360)
 script = ExtResource("3_nk6ml")
+z = 7.0
 
 [node name="DuckSpawner2" type="Node2D" parent="DuckPool"]
-position = Vector2(330, 138)
+position = Vector2(960, 290)
 script = ExtResource("3_nk6ml")
 direction = -1
+z = 5.0
 
 [node name="DuckSpawner3" type="Node2D" parent="DuckPool"]
 position = Vector2(-380, -109)
 script = ExtResource("3_nk6ml")
+z = 3.0
 
 [node name="DuckSpawner4" type="Node2D" parent="DuckPool"]
 position = Vector2(339, -202)
 script = ExtResource("3_nk6ml")
 direction = -1
+z = 1.0
+
+[node name="Wave2" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1593.0
+offset_top = 246.0
+offset_right = 1593.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_2j82v")
+stretch_mode = 1
+
+[node name="Wave" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1593.0
+offset_top = 346.0
+offset_right = 1593.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_2j82v")
+stretch_mode = 1

@@ -21,6 +21,8 @@ var flashesPerSecond: float = 4
 var flashTimer: float
 var flash = false
 
+var infiniTimer: float = 0
+
 var tutorials = [
 	[],
 	#["GoldenDuck"]
@@ -35,6 +37,15 @@ func start_next(round: int):
 	print("AAAA")
 
 func _process(delta):
+	infiniTimer += delta
+	(get_node("Wave") as Sprite2D).position = Vector2(960 - sin(infiniTimer) * 30, 983 + cos(infiniTimer) * 10)
+	(get_node("Wave2") as Sprite2D).position = Vector2(960 - cos(infiniTimer) * 30, 883 - sin(infiniTimer) * 10)
+	
+	
+	
+	
+	
+	
 	if(state == StateMachine.OFF):
 		return
 	stateTimer += delta
