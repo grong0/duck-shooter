@@ -1,0 +1,16 @@
+{
+    "title": "Duck Duck Shoot",
+    "author": "Garret T and Dylan S",
+    "summary": "A fun duck themed carnival game",
+    "release_date": "2024-11-3",
+    "multiplayer": false,
+    "genres":[
+        "Casual",
+        "Carnival",
+        "Ducks"
+    ],
+    "times_played": 0,
+    "last_played":0,
+    "cover_image": "Icon.png",
+    "exec": "DuckDuckShoot.exe"
+}

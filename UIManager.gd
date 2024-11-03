@@ -2,6 +2,7 @@ class_name UIManager
 extends Control
 
 signal next_round
+signal clear_ducks
 
 enum StateMachine{
 	ROUNDFALL,
@@ -12,7 +13,7 @@ enum StateMachine{
 	TUTORIALUP,
 }
 
-var stateTimers: Array[float] = [1, 2, 1]
+var stateTimers: Array[float] = [3, 5, 1]
 var state: StateMachine = StateMachine.OFF
 var stateTimer: float
 
@@ -61,8 +62,10 @@ func _process(delta):
 	match(state):
 		StateMachine.ROUNDFALL:
 			#move sign down
-			(get_node("RoundSign") as TextureRect).position.y = -300 + 2 * (900 * stateTimer * stateTimer - 600 * stateTimer * stateTimer * stateTimer)
+			if(stateTimer > stateTimers[state] - 1):
+				(get_node("RoundSign") as TextureRect).position.y = -300 + 2 * (900 * (stateTimer-stateTimers[state] - 1) * (stateTimer-stateTimers[state] - 1) - 600 * (stateTimer-stateTimers[state] - 1) * (stateTimer-stateTimers[state] - 1) * (stateTimer-stateTimers[state] - 1))
 			if(stateTimer > stateTimers[state]):
+				clear_ducks.emit()
 				stateTimer -= stateTimers[state]
 				if(tutorials.size() > round && tutorials[round].size() > 0):
 					state = StateMachine.TUTORIAL;
