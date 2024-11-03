@@ -2,20 +2,20 @@
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_i3mlt"]
 [ext_resource type="Script" path="res://UIManager.gd" id="2_0b5g6"]
-[ext_resource type="Texture2D" uid="uid://dcklfhyj7slls" path="res://sprites/stuff/SideCurtain.png" id="2_hn8pa"]
-[ext_resource type="Texture2D" uid="uid://cnmltasigxkxa" path="res://sprites/stuff/TopCurtain.png" id="3_4f4cx"]
-[ext_resource type="Texture2D" uid="uid://d2i6l5ru47pea" path="res://sprites/stuff/hills.png" id="3_44rqf"]
-[ext_resource type="Texture2D" uid="uid://dngaynnll31dg" path="res://sprites/round_sign/round_1_sign.png" id="4_04ujo"]
-[ext_resource type="Texture2D" uid="uid://d4nbho2m6ln60" path="res://sprites/round_sign/round_2_sign.png" id="4_e08hs"]
-[ext_resource type="Texture2D" uid="uid://bfdsujv3etgj0" path="res://sprites/round_sign/round_3_sign.png" id="5_g3e6g"]
-[ext_resource type="Texture2D" uid="uid://bhkggm0by6dqw" path="res://sprites/round_sign/round_4_sign.png" id="6_itw0h"]
-[ext_resource type="Texture2D" uid="uid://llhyi3twput6" path="res://sprites/round_sign/round_5_sign.png" id="7_k6p8d"]
-[ext_resource type="Texture2D" uid="uid://cavevf5yex5s5" path="res://sprites/round_sign/round_1_sign_alt.png" id="8_crbms"]
-[ext_resource type="Texture2D" uid="uid://c2rqnhq06vdlw" path="res://sprites/round_sign/round_2_sign_alt.png" id="9_n4upi"]
-[ext_resource type="Texture2D" uid="uid://yy2ytqncxdna" path="res://sprites/round_sign/round_3_sign_alt.png" id="10_jf1rf"]
-[ext_resource type="Texture2D" uid="uid://s8pg51ojagw7" path="res://sprites/round_sign/round_4_sign_alt.png" id="11_npsrk"]
-[ext_resource type="Texture2D" uid="uid://cgs3edyrpbwdl" path="res://sprites/round_sign/round_5_sign_alt.png" id="12_w2qrv"]
-[ext_resource type="Texture2D" uid="uid://betm6ar7qpuqy" path="res://sprites/stuff/wave.png" id="13_26ynu"]
+[ext_resource type="Texture2D" uid="uid://cjvo5glioeuso" path="res://sprites/stuff/SideCurtain.png" id="2_hn8pa"]
+[ext_resource type="Texture2D" uid="uid://bhrg85e0ak7fy" path="res://sprites/stuff/TopCurtain.png" id="3_4f4cx"]
+[ext_resource type="Texture2D" uid="uid://cvbfodgoq4gi4" path="res://sprites/stuff/hills.png" id="3_44rqf"]
+[ext_resource type="Texture2D" uid="uid://3xu5ruo4ql1a" path="res://sprites/round_sign/round_1_sign.png" id="4_04ujo"]
+[ext_resource type="Texture2D" uid="uid://dvnlnkr874t3i" path="res://sprites/round_sign/round_2_sign.png" id="4_e08hs"]
+[ext_resource type="Texture2D" uid="uid://cs3n7ravox3u4" path="res://sprites/round_sign/round_3_sign.png" id="5_g3e6g"]
+[ext_resource type="Texture2D" uid="uid://h87id6g2xh2u" path="res://sprites/round_sign/round_4_sign.png" id="6_itw0h"]
+[ext_resource type="Texture2D" uid="uid://bj8h3qi0hhn4y" path="res://sprites/round_sign/round_5_sign.png" id="7_k6p8d"]
+[ext_resource type="Texture2D" uid="uid://g4hgtqa1ckhm" path="res://sprites/round_sign/round_1_sign_alt.png" id="8_crbms"]
+[ext_resource type="Texture2D" uid="uid://bjp8y3oeir4xh" path="res://sprites/round_sign/round_2_sign_alt.png" id="9_n4upi"]
+[ext_resource type="Texture2D" uid="uid://b1qjx4qhnnqwi" path="res://sprites/round_sign/round_3_sign_alt.png" id="10_jf1rf"]
+[ext_resource type="Texture2D" uid="uid://cifgsav7cr7it" path="res://sprites/round_sign/round_4_sign_alt.png" id="11_npsrk"]
+[ext_resource type="Texture2D" uid="uid://bvj51k7asra0o" path="res://sprites/round_sign/round_5_sign_alt.png" id="12_w2qrv"]
+[ext_resource type="Texture2D" uid="uid://bc8krg6is20g0" path="res://sprites/stuff/wave.png" id="13_26ynu"]
 
 [node name="Main" type="Node2D"]
 position = Vector2(960, 540)
@@ -68,9 +68,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -309.5
-offset_top = -540.0
+offset_top = -840.0
 offset_right = 309.5
-offset_bottom = -356.0
+offset_bottom = -656.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_04ujo")
