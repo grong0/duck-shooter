@@ -20,8 +20,12 @@ func _ready():
 	scores = Save.load()
 	print(scores)
 
-	var session_node = get_node("Session")
+	var session_node = get_node("Session") as Session
+	var UImanager = get_node("CanvasLayer/Container") as UIManager
+	
 	session_node.connect("session_completed", _on_session_complete)
+	session_node.connect("start_round_transition", UImanager.start_next)
+	UImanager.connect("next_round", session_node.next_round)
 
 # func _process(delta):
 # 	pass
