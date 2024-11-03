@@ -2,6 +2,7 @@ class_name Session
 extends Node2D
 
 signal session_completed
+signal start_round_transition
 
 @export var ROUND_TIME: int = 10 # seconds
 var total_time: float
@@ -45,10 +46,14 @@ func _process(delta):
 		round_num += 1
 		total_time -= ROUND_TIME
 		if round_num < 5:
-			duck_pool.startRound(round_num)
-			print("rounded ended, now round " + str(round_num + 1))
+			start_round_transition.emit(round_num)
+		else:
+			duck_pool.running = false
+			print("session_ending...")
+			session_completed.emit()
 
-	if round_num > 4:
-		duck_pool.running = false
-		print("session_ending...")
-		session_completed.emit()
+
+func next_round():
+	duck_pool.startRound(round_num)
+	print("rounded ended, now round " + str(round_num + 1))
+	
